@@ -1,0 +1,31 @@
+name: 1p2k
+help: Sync your passwords from 1password to keepass
+version: 1.0.0
+
+dependencies:
+  keepassxc-cli: "install by running: 'brew install keepassxc'"
+  op: "install by running: 'brew install 1password-cli'"
+
+commands:
+- name: sync
+  alias: s
+  help: Sync all your password/username
+
+  flags:
+  - long: --vault
+    short: -v
+    arg: vault
+    help: 1password vault to sync
+
+  - long: --keepass-secret
+    short: -s
+    required: true
+    arg: keepass-secret
+    help: Name of the keepass secret in 1password
+
+  - long: --keepass-database
+    short: -k
+    required: true
+    arg: file    
+    arg: keepass-database
+    help: Keepass database to sync to 
